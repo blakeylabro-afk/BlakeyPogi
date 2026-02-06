@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interactive Website Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #222;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .container {
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background: #0056b3;
+        }
+
+        .dark {
+            background: #121212;
+            color: #f5f5f5;
+        }
+
+        .counter {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Interactive Website ni Pogito blake</h1>
+    <p id="message">Click the change text button!!!</p>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <button onclick="increaseCount()">Click Counter</button>
+
+    <div class="counter">
+        Button clicks: <span id="count">0</span>
+    </div>
+
+    <footer>
+        Made by Blake L. Brosas
+		for ICT
+    </footer>
+</div>
+
+<script>
+    let count = 0;
+    let darkMode = false;
+
+    function changeText() {
+        document.getElementById("message").textContent =
+            "You just made Blake more Pogi 😎";
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark");
+        darkMode = !darkMode;
+    }
+
+    function increaseCount() {
+        count++;
+        document.getElementById("count").textContent = count;
+    }
+</script>
+
+</body>
+</html>
